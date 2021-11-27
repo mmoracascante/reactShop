@@ -15,8 +15,9 @@ export const Header = () => {
   const handleToggle = () => {
   setToggle(!toggle)
   }
+
     return (
-        <nav>
+        <nav id='#navbar'>
         <img src={MenuIcon} alt="menu" className="menu" />
     
         <div className="navbar-left">

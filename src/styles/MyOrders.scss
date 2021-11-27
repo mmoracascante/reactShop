@@ -1,7 +1,8 @@
 .MyOrder {
 	width: 360px;
-	height: auto;
+	height: 350px;
 	padding: 24px;
+	overflow-y: auto;
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
