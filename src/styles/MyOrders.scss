@@ -1,8 +1,7 @@
 .MyOrder {
 	width: 360px;
-	height: 350px;
+	height: 525px;
 	padding: 24px;
-	overflow-y: auto;
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
@@ -18,9 +17,18 @@
 	transform: rotate(180deg);
 	margin-right: 14px;
 }
-.title {
+.title-container .title {
 	font-size: var(--lg);
 	font-weight: bold;
+}
+
+.my-order-content::-webkit-scrollbar {
+	display: none;
+}
+.my-order-content {
+	overflow-y: scroll;
+    height: 250px;
+	margin-bottom: 24px;
 }
 .order {
 	display: grid;
