@@ -13,7 +13,11 @@ export const Header = () => {
   const { state } = useContext(AppContext)
 
   const handleToggle = () => {
-  setToggle(!toggle)
+    setToggle(!toggle)
+  }
+
+  const handleToggleOrders = () => {
+    setToggleOrders(!toggleOrders)
   }
 
     return (
@@ -50,7 +54,7 @@ export const Header = () => {
             <li className="navbar-email" onClick={handleToggle}>
               platzi@example.com
               </li>
-            <li className="navbar-shopping-cart" onClick={() => setToggleOrders(!toggleOrders)}>
+            <li className="navbar-shopping-cart" onClick={() => handleToggleOrders()}>
               <img src={ShoppingCart} alt="shopping cart" />
               { state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
             </li>
@@ -60,7 +64,7 @@ export const Header = () => {
           toggle ? <Menu /> : null
         }
         {
-          toggleOrders && <MyOrder />
+          toggleOrders && <MyOrder  handleToggleOrders={handleToggleOrders}/>
         }
       </nav>
     )
