@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import {Menu} from '@components/Menu'
+import {MenuMobile} from '@components/MenuMobile'
 import { MyOrder } from '@containers/MyOrder'
 import AppContext from '../context/AppContext'
 import Logo from '@logos/logo_yard_sale.svg'
@@ -9,11 +10,16 @@ import '@styles/Header.scss'
 
 export const Header = () => {
   const [toggle, setToggle] = useState(false)
+  const [toggleMobile, setToggleMobile] = useState(false)
   const [toggleOrders, setToggleOrders] = useState(false)
   const { state } = useContext(AppContext)
 
   const handleToggle = () => {
     setToggle(!toggle)
+  }
+
+  const handleToggleMobile = () => {
+    setToggleMobile(!toggleMobile)
   }
 
   const handleToggleOrders = () => {
@@ -22,7 +28,11 @@ export const Header = () => {
 
     return (
         <nav id='#navbar'>
-        <img src={MenuIcon} alt="menu" className="menu" />
+        <img onClick={() => handleToggleMobile()} src={MenuIcon} alt="menu" className="menu" />
+        
+        {
+         toggleMobile ? <MenuMobile /> : null
+        }
     
         <div className="navbar-left">
           <img src={Logo} alt="logo" className="nav-logo" />
