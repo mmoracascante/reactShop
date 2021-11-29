@@ -17,6 +17,10 @@
     object-fit: cover;
 }
 
+.shopping-cart .shopping-cart-delete {
+    cursor: pointer;
+}
+
 .shopping-cart p:nth-child(2) {
     color: var(--very-light-pink);
 }
